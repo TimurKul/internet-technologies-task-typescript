@@ -11,7 +11,8 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
 
   const classes = {
     buttonTypes: {
-      primary: 'bg-sky-300 text-sky-800 cursor-pointer',
+      primary:
+        'bg-sky-300 text-sky-800 cursor-pointer focus:outline-2 focus:outline-offset-2 focus:outline-sky-300 hover:bg-indigo-300 hover:text-indigo-800 hover:focus:outline-indigo-300',
       disabled: 'bg-sky-200 text-sky-800/50',
     },
   };
