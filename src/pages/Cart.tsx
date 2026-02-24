@@ -1,8 +1,10 @@
+import { Text } from '../components/Text.tsx';
+
 export const Cart: React.FC = () => {
   return (
     <>
-      <h1 className="text-3xl font-bold">Корзина</h1>
-      <p>У вас в корзине пока что пусто!</p>
+      <h1>Корзина</h1>
+      <Text content="У вас в корзине пока что пусто!"></Text>
     </>
   );
 };

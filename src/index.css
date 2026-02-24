@@ -2,6 +2,18 @@
 
 @layer base {
   h1 {
+    @apply text-sky-900;
+  }
+
+  h1 {
+    @apply text-3xl font-bold
+  }
+
+  h1:not(:last-child), p:not(:last-child), div:not(:last-child) {
     @apply mb-3;
+  }
+
+  input:not(:last-child), button:not(:last-child) {
+    @apply mr-3;
   }
 }

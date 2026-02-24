@@ -11,7 +11,7 @@ export const App: React.FC = () => {
     <>
       <Header />
 
-      <main className="min-h-[calc(100vh-48px-40px-96px)]">
+      <main className="flex-grow">
         <div className="my-10 mx-[15vw] rounded-4xl py-5 px-10 bg-sky-50">
           <Routes>
             <Route path="/" element={<Home />} />

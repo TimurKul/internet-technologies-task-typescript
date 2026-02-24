@@ -1,0 +1,27 @@
+type InputType = 'primary' | 'disabled';
+
+interface InputProps {
+  placeholder: string;
+  inputType: InputType;
+}
+
+export const Input: React.FC<InputProps> = (props: InputProps) => {
+  const { placeholder, inputType } = props;
+  const defaultClass = 'border border-2 rounded-md px-2 py-1';
+
+  const classes = {
+    inputTypes: {
+      primary:
+        'border-sky-400 bg-sky-50 caret-indigo-500 text-sky-800 placeholder-sky-400 focus:outline-none focus:border-indigo-400 focus:placeholder-indigo-400 focus:text-indigo-800',
+      disabled: 'border-sky-200 bg-sky-50 placeholder-sky-200',
+    },
+  };
+
+  return (
+    <input
+      placeholder={placeholder}
+      disabled={inputType === 'disabled'}
+      className={defaultClass + ' ' + classes.inputTypes[inputType]}
+    ></input>
+  );
+};
