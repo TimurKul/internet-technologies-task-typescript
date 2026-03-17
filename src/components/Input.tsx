@@ -5,7 +5,7 @@ interface InputProps {
   inputType: InputType;
 }
 
-export const Input: React.FC<InputProps> = (props: InputProps) => {
+export const Input: React.FC<InputProps> = (props) => {
   const { placeholder, inputType } = props;
   const defaultClass = 'border border-2 rounded-md px-2 py-1 bg-sky-50';
 

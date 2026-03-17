@@ -2,7 +2,7 @@ interface TextProps {
   content: string;
 }
 
-export const Text = (props: TextProps) => {
+export const Text: React.FC<TextProps> = (props) => {
   const { content } = props;
-  return <p className="text-sky-950">{content}</p>;
+  return <p className="text-sky-900">{content}</p>;
 };

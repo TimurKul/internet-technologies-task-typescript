@@ -1,20 +1,20 @@
+import { useState } from 'react';
 import { Button } from '../components/Button.tsx';
-import { Input } from '../components/Input.tsx';
-import { Text } from '../components/Text.tsx';
+import { Modal } from '../components/Modal.tsx';
 
 export const Home: React.FC = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
   return (
     <>
-      <h1>Hello, world!</h1>
-      <Text content="Привет, мир!"></Text>
-      <div>
-        <Button title="Нажми меня!" buttonType="primary"></Button>
-        <Button title="Нажми меня!" buttonType="disabled"></Button>
+      <div className="flex justify-center">
+        <Button
+          title="Добавить товар"
+          buttonType="modal"
+          onClick={() => setIsOpen(!isOpen)}
+        ></Button>
       </div>
-      <div>
-        <Input placeholder="Я работаю!" inputType="primary"></Input>
-        <Input placeholder="Я не работаю!" inputType="disabled"></Input>
-      </div>
+      <Modal isOpen={isOpen}></Modal>
     </>
   );
 };
