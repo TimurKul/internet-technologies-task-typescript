@@ -11,8 +11,8 @@ export const App: React.FC = () => {
     <>
       <Header />
 
-      <main className="flex-grow">
-        <div className="my-10 mx-[15vw] rounded-4xl py-5 px-10 bg-sky-50">
+      <main className="flex-grow flex justify-center">
+        <div className="max-w-[1000px] w-full my-10 mx-10 rounded-4xl px-10 py-5 bg-sky-50 space-y-4">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/cart" element={<Cart />} />
