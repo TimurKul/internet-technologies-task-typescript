@@ -21,12 +21,11 @@ export const Modal: React.FC<ModalProps> = (props) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    modalHandler(name, description, price);
 
     setName('');
     setDescription('');
     setPrice('');
-
-    modalHandler(name, description, price);
   };
 
   const darkClass =
@@ -43,15 +42,26 @@ export const Modal: React.FC<ModalProps> = (props) => {
             className="flex flex-col items-center space-y-4"
           >
             <Text content="Наименование:"></Text>
-            <Input name="name" onChange={setName} inputType="primary"></Input>
+            <Input
+              name="name"
+              type="text"
+              onChange={setName}
+              inputStyle="primary"
+            ></Input>
             <Text content="Описание:"></Text>
             <Input
               name="description"
+              type="text"
               onChange={setDescription}
-              inputType="primary"
+              inputStyle="primary"
             ></Input>
             <Text content="Стоимость:"></Text>
-            <Input name="price" onChange={setPrice} inputType="primary"></Input>
+            <Input
+              name="price"
+              type="number"
+              onChange={setPrice}
+              inputStyle="primary"
+            ></Input>
             <Button
               title="Добавить"
               styleType="enabled"

@@ -6,7 +6,7 @@ import { Item } from '../components/Item';
 interface Item {
   name: string;
   description: string;
-  price: string;
+  price: number;
 }
 
 export const Home: React.FC = () => {
@@ -14,7 +14,7 @@ export const Home: React.FC = () => {
   const [items, setItems] = useState<Item[]>([]);
 
   const modalHandler = (name: string, description: string, price: string) => {
-    setItems([...items, { name, description, price }]);
+    setItems([...items, { name, description, price: Number(price) }]);
     setIsOpen(false);
   };
 
@@ -35,7 +35,7 @@ export const Home: React.FC = () => {
             <Item
               title={item.name}
               description={item.description}
-              price={item.price}
+              price={String(item.price)}
             ></Item>
           </li>
         ))}

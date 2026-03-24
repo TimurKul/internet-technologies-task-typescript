@@ -1,14 +1,16 @@
-type InputType = 'primary' | 'disabled';
+type inputStyle = 'primary' | 'disabled';
+type inputType = 'text' | 'number';
 
 interface InputProps {
   placeholder?: string;
   name: string;
+  type: inputType;
   onChange: React.Dispatch<React.SetStateAction<string>>;
-  inputType: InputType;
+  inputStyle: inputStyle;
 }
 
 export const Input: React.FC<InputProps> = (props) => {
-  const { placeholder, name, onChange, inputType } = props;
+  const { placeholder, name, type, onChange, inputStyle } = props;
   const defaultClass = 'border border-2 rounded-md px-2 py-1 bg-sky-50';
 
   const classes = {
@@ -23,9 +25,10 @@ export const Input: React.FC<InputProps> = (props) => {
     <input
       placeholder={placeholder}
       name={name}
+      type={type}
       onChange={(e) => onChange(e.target.value)}
-      disabled={inputType === 'disabled'}
-      className={defaultClass + ' ' + classes.inputTypes[inputType]}
+      disabled={inputStyle === 'disabled'}
+      className={defaultClass + ' ' + classes.inputTypes[inputStyle]}
       required
     ></input>
   );
